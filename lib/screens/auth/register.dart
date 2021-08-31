@@ -2,6 +2,7 @@ import 'package:apple_products/screens/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -108,9 +109,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Container(
                   margin: EdgeInsets.only(left: screenSize.width * 0.10),
                   width: screenSize.width * 0.6,
-                  child: Text(
-                      'En vous inscrivant, vous acceptez les conditions...',
-                      style: TextStyle(fontSize: 18)),
+                  child: RichText(
+                    text: TextSpan(
+                        text: 'En vous inscrivant, vous acceptez',
+                        style: GoogleFonts.montserrat(
+                            color: Colors.black, fontSize: 18),
+                        children: [
+                          TextSpan(
+                              text: ' conditions...',
+                              style: TextStyle(color: Colors.blue))
+                        ]),
+                  ),
                 ),
               ),
               Padding(
@@ -148,38 +157,122 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               Center(child: Text('S\'inscrire avec')),
               Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: screenSize.width * 0.25),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: screenSize.width * 0.25, vertical: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
+                        alignment: Alignment.center,
+                        width: 50,
+                        height: 50,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.07),
+                                offset: Offset(
+                                  1.5,
+                                  5,
+                                ),
+                                blurRadius: 3),
+                            BoxShadow(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                                offset: Offset(1.5, -5),
+                                blurRadius: 2),
+                            BoxShadow(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                                offset: Offset(-1.5, -5),
+                                blurRadius: 3),
+                          ],
+                          color: Theme.of(context).scaffoldBackgroundColor,
                         ),
-                        child: IconButton(
-                            icon: Icon(Icons.facebook_rounded,
-                                color: Colors.blue),
-                            onPressed: () {}),
+                        child: Container(
+                            padding: EdgeInsets.all(5),
+                            width: 30,
+                            height: 30,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/icons/google.png')))),
                       ),
                       Container(
+                        alignment: Alignment.center,
+                        width: 50,
+                        height: 50,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.07),
+                                offset: Offset(
+                                  1.5,
+                                  5,
+                                ),
+                                blurRadius: 3),
+                            BoxShadow(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                                offset: Offset(1.5, -5),
+                                blurRadius: 2),
+                            BoxShadow(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                                offset: Offset(-1.5, -5),
+                                blurRadius: 3),
+                          ],
+                          color: Theme.of(context).scaffoldBackgroundColor,
                         ),
-                        child: IconButton(
-                            icon: Icon(Icons.facebook_rounded,
-                                color: Colors.blue),
-                            onPressed: () {}),
+                        child: Container(
+                            padding: EdgeInsets.all(5),
+                            width: 30,
+                            height: 30,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image:
+                                        AssetImage('assets/icons/apple.png')))),
                       ),
                       Container(
+                        alignment: Alignment.center,
+                        width: 50,
+                        height: 50,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.07),
+                                offset: Offset(
+                                  1.5,
+                                  5,
+                                ),
+                                blurRadius: 3),
+                            BoxShadow(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                                offset: Offset(1.5, -5),
+                                blurRadius: 2),
+                            BoxShadow(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                                offset: Offset(-1.5, -5),
+                                blurRadius: 3),
+                          ],
+                          color: Theme.of(context).scaffoldBackgroundColor,
                         ),
-                        child: IconButton(
-                            icon: Icon(Icons.facebook_rounded,
-                                color: Colors.blue),
-                            onPressed: () {}),
-                      ),
+                        child: Container(
+                            padding: EdgeInsets.all(5),
+                            width: 30,
+                            height: 30,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/icons/facebook.png')))),
+                      )
                     ],
                   )),
             ],
